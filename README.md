@@ -5,7 +5,8 @@ This repository evidences the completion of Cyber-Security Bootcamp with readme 
 
 The files in this repository were used to configure the network depicted below.
 
-![Diagram of the Network](https://github.com/jhkgeneral/CyberSecurity_Consultant/1-Diagrams/VirtualNetworkVirtualMachines.png)
+![Diagram of the Network](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Diagrams/VirtualNetworkVirtualMachines.png)
+
 (Images/VirtualNetworkVirtualMachines.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
