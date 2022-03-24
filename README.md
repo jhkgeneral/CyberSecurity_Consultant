@@ -9,7 +9,7 @@ The following represents the complete MS Azure based virtual network created as 
 
 (1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
-The summary below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select portions of the configuration and playbook files may be used to install only certain components, such as 'FILEBEAT' or 'METRICBEAT'.
+The summary below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select portions of the configuration and playbook files may be used to install only certain components, such as `FILEBEAT` or `METRICBEAT`.
 
 The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
 
@@ -31,24 +31,33 @@ The files referenced have been tested and used to generate a live [ELK Stack](ht
 
 ### Section 1: Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the [D*mn Vulnerable Web Application](https://opensourcelibs.com/lib/dvwa?msclkid=4d0d154aab7811ec90879e379f49b7cb).
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting public access to the network.  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Summary of load balancer:
+- _TODO: What aspect of security do load balancers protect_
 
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+Summary of Jumpbox:
+- _TODO: What is the advantage of a jump box_
 
-| Name                | Function                         | IP Address | Operating System |
-|---------------------|----------------------------------|------------|------------------|
-| JumpboxProvisioner  | Gateway                          | 10.0.0.4   | Linux-Ubuntu     |
-| Web-1               | Web-App Server                   | 10.0.0.5   | Linux-Ubuntu     |
-| Web-2               | Web-App Server                   | 10.0.0.6   | Linux-Ubuntu     |
-| ELK-Stack           | Log Analytics & Alerting         | 10.1.0.4   | Linux-Ubuntu     |
+Integrating an ELK Stack server allows users to easily monitor the vulnerable Virtual Machines (VM) for changes to the application data, configurations and system files.
+-_Note:_ The purpose and configuration of the ELK Stack server is described at `Section 3` below.
+
+The network configuration details of each machine is as follows:
+
+| Name                | Function                  | Virtual Network | IP Address | Operating System |
+|---------------------|---------------------------|-----------------|------------------|
+| JumpboxProvisioner  | Gateway                   | Red-Team-Net    | 10.0.0.4   | Linux-Ubuntu     |
+| Web-1               | Web-App Server            | Red-Team-Net    | 10.0.0.5   | Linux-Ubuntu     |
+| Web-2               | Web-App Server            | Red-Team-Net    | 10.0.0.6   | Linux-Ubuntu     |
+| ELK-Stack           | Log Analytics & Alerting  | Red-Team-Net2   | 10.1.0.4   | Linux-Ubuntu     |
+
+Private IP range of the virtual networks noted above defined as follows:
+- **Red-Team-Net:** 10.0.0.0/16
+- **Red-Team-Net2:** 10.1.0.0/16
+
+Network peering is configured between the **Red-Team-Net** and **Red-Team-Net2** virtual networks, allowing connection in both directions.
 
 ---
 
@@ -102,24 +111,24 @@ The following screenshot displays the result of running `docker ps` after succes
 
 - **Beats Installed:** _The following Beats installed on the aforementioned machines_
 
-  - 'FILEBEAT'
+  - `FILEBEAT`
     - See URL for more details [Filebeat](https://www.elastic.co/beats/filebeat?msclkid=14613ae2ab6c11ecb5c6c574a3483e0d)
-  - 'METRICBEAT'
+  - `METRICBEAT`
     - See URL for more details [Metricbeat](https://www.elastic.co/beats/metricbeat?msclkid=5485be4aab6c11eca81543bc3775ed66)
 
 - **Information Collected:** These Beats allow us to collect the following information from each machine
 
-  - 'BEATS': Beats are special-purpose data collection modules.
+  - `BEATS`: Beats are special-purpose data collection modules.
     - Rather than collecting all a machine's log data, Beats allow you to collect only the very specific pieces of information you are interested in.
     - Beats generate and send log file data to either Logstash and Elasticsearch for indexing. Kilbana is then used to visualize the data collected in user friendly depictions.
     - Since 'FILEBEAT' and 'METRICBEAT' collect data about specific files on remote machines, they must be installed on the machines targeted for monitoring.
-  - 'FILEBEAT': _Collects data about file system_
+  - `FILEBEAT`: _Collects data about file system_
     - This beat collects and parses logs from various components of the machines.  Logs targed include the _var/log/*.log_ folder and can be further refined in configuration file if desired.
     - The beat outputs data to the _elasticsearch_ and _Kibana_ modules of ELK Stack.
     - Logs collected and parsed in the project configuration include for example:
       - **nginx**: Records events like visitors to your site and issues it encountered to log files. 
       - **osquery**: Records events like user logins, installed programs, running processes, network connections, or system log collection. 
-  - 'METRICBEAT': _Collects machine metrics_
+  - `METRICBEAT`: _Collects machine metrics_
     - This beat collects and parses data/statistics from various system/hardware components of the machines or containers where installed and configured.
     - The beat outputs data the _elasticsearch_ and _Kibana_ modules of ELK Stack.
     - Example statistics collected and parsed include for example:
@@ -147,3 +156,5 @@ _TODO: Answer the following questions to fill in the blanks:_
 ### Section 5: FAQ
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
