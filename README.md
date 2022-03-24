@@ -1,28 +1,31 @@
 # CyberSecurity_Consultant
-This repository evidences the completion of Cyber-Security Bootcamp with readme files and key project deliverables
+This repository depicts the archictecture and deployment tools leveraged to setup MS Azure based virtual network, virtual machines, web applications, and ELK-Stack monitoring function.
 
 ## Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below.
+The following represents the complete MS Azure based virtual network created as part of this projec:
 
 ![Diagram of the Network](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Diagrams/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
 (Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
-These files have been tested and used to generate a live [ELK](https://www.elastic.co/) deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the configuration and playbook files may be used to install only certain components, such as Filebeat or Metricbeat.
+The summary below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select portions of the configuration and playbook files may be used to install only certain components, such as 'FILEBEAT' or 'METRICBEAT'.
 
-  - _TODO: Enter the playbook file._
+The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
 
-This document contains the following details:
-- Description of the Topologu
-- Access Policies
-- ELK Configuration
+<details>
+  <summary>This document contains the following sections:</summary>
+  <br>
+
+- **Section 1:** Description of the Topology
+- **Section 2:** Access Policies
+- **Section 3:** ELK Stack Configuration
   - Beats in Use
   - Machines Being Monitored
-- How to Use the Ansible Build
+- **Section 4:** Using Ansible Build & Playbooks
+- **Section 5:** FAQ
 
-
-### Description of the Topology
+### Section 1: Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -43,7 +46,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Web-2               | Web-App Server                   | 10.0.0.6   | Linux-Ubuntu     |
 | ELK-Stack           | Log Analytics & Alerting         | 10.1.0.4   | Linux-Ubuntu     |
 
-### Access Policies
+### Section 2: Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -61,10 +64,11 @@ A summary of the access policies in place can be found in the table below.
 |          |                     |                      |
 |          |                     |                      |
 
-### Elk Configuration
+### Section 3: ELK Stack Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- **Accuracy:** Leveraging Ansible to automate the setup of ELK machine helps ensure the accurate configuration of settings and flags, helping to eliminate human error.
+- **Completeness:** Leveraging Ansible to automate the setup of ELK machine helps ensure the complete setup of a single machine or many machines, helping to eliminate machines from being missed.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -75,17 +79,45 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
-### Target Machines & Beats
-This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+<details>
+  <summary>Click here to view details of target machines & beats:</summary>
+  <br>
 
-We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- **Target Machines:** _The ELK Stack server is configured to monitor the following machines_
 
-These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+  - Web-1
+    - Private IP: 10.0.0.5
+    - Applications: DVWA
+  - Web-2
+    - Private IP: 10.0.0.6
+    - Applications: DVWA 
 
-### Using the Playbook
+- **Beats Installed:** _The following Beats installed on the aforementioned machines_
+
+  - 'FILEBEAT'
+    - See URL for more details [Filebeat](https://www.elastic.co/beats/filebeat?msclkid=14613ae2ab6c11ecb5c6c574a3483e0d)
+  - 'METRICBEAT'
+    - See URL for more details [Metricbeat](https://www.elastic.co/beats/metricbeat?msclkid=5485be4aab6c11eca81543bc3775ed66)
+
+- **Information Collected:** These Beats allow us to collect the following information from each machine
+
+  - 'BEATS': Beats are special-purpose data collection modules.
+    - Rather than collecting all a machine's log data, Beats allow you to collect only the very specific pieces of information you are interested in.
+    - Beats generate and send log file data to either Logstash and Elasticsearch for indexing. Kilbana is then used to visualize the data collected in user friendly depictions.
+    - Since 'FILEBEAT' and 'METRICBEAT' collect data about specific files on remote machines, they must be installed on the machines targeted for monitoring.
+  - 'FILEBEAT': _Collects data about file system_
+    - This beat collects and parses logs from various components of the machines.  Logs targed include the _var/log/*.log_ folder and can be further refined in configuration file if desired.
+    - The beat outputs data to the _elasticsearch_ and _Kibana_ modules of ELK Stack.
+    - Logs collected and parsed in the project configuration include for example:
+      - **nginx**: Records events like visitors to your site and issues it encountered to log files. 
+      - **osquery**: Records events like user logins, installed programs, running processes, network connections, or system log collection. 
+  - 'METRICBEAT': _Collects machine metrics_
+    - This beat collects and parses data/statistics from various system/hardware components of the machines or containers where installed and configured.
+    - The beat outputs data the _elasticsearch_ and _Kibana_ modules of ELK Stack.
+    - Example statistics collected and parsed include for example:
+      - CPU usage, memory, file system, disk IO, and network IO statistics, as well as processes running on your systems.
+
+### Using Ansible Build and Playbooks
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
