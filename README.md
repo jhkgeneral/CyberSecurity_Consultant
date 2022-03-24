@@ -3,11 +3,11 @@ This repository depicts the archictecture and deployment tools leveraged to setu
 
 ## Automated ELK Stack Deployment
 
-The following represents the complete MS Azure based virtual network created as part of this projec:
+The following represents the complete MS Azure based virtual network created as part of this project:
 
 ![Diagram of the Network](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Diagrams/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
-(Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
+(1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
 The summary below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select portions of the configuration and playbook files may be used to install only certain components, such as 'FILEBEAT' or 'METRICBEAT'.
 
