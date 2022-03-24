@@ -47,7 +47,7 @@ Integrating an ELK Stack server allows users to easily monitor the vulnerable Vi
 The network configuration details of each machine is as follows:
 
 | Name                | Function                  | Virtual Network | IP Address | Operating System |
-|---------------------|---------------------------|-----------------|------------------|
+|---------------------|---------------------------|-----------------|------------| -----------------|
 | JumpboxProvisioner  | Gateway                   | Red-Team-Net    | 10.0.0.4   | Linux-Ubuntu     |
 | Web-1               | Web-App Server            | Red-Team-Net    | 10.0.0.5   | Linux-Ubuntu     |
 | Web-2               | Web-App Server            | Red-Team-Net    | 10.0.0.6   | Linux-Ubuntu     |
