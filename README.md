@@ -102,11 +102,11 @@ Machines within the network can only be accessed by the Jumpbox virtual machine.
 
 Access Rules - Jumpbox
 
-![JumpboxProvisioner Networking Rules]( )
+![JumpboxProvisioner Networking Rules](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Images/Access%20Rules%20Jumpbox.PNG)
 
 Access Rules - ELK Stack
 
-![ELK Stack Networking Rules]( )
+![ELK Stack Networking Rules](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Images/Access%20Rules%20ELK-Stack.PNG)
 
  </details>
 
