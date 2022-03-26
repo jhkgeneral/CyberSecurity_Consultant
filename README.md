@@ -3,29 +3,33 @@ Hello github community! My name is Jim Krueger and I am practicating Internal Au
 
 ## Automated ELK Stack Deployment
 
-The following represents example MS Azure based virtual network created as part of my training.
-
-![Diagram of the Network](1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
-
-(1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
-
 The sections below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select sections may be viewed to view how to configure and run playbook files to install only certain components, such as `FILEBEAT` or `METRICBEAT`.
 
 The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
 
 This README file contains the following sections:
 
-- **Section 1:** Description of the Topology
-- **Section 2:** Access Policies
-- **Section 3:** ELK Stack Configuration
+- **Section 1:** Network Diagram
+- **Section 2:** Description of the Topology
+- **Section 3:** Access Policies
+- **Section 4:** ELK Stack Configuration
   - Beats in Use
   - Machines Being Monitored
-- **Section 4:** Using Ansible Build & Playbooks
-- **Section 5:** FAQ
+- **Section 5:** Using Ansible Build & Playbooks
 
 ---
 
-### Section 1: Description of the Topology
+### Section 1: Network Diagram
+
+The following represents example MS Azure based virtual network created as part of my training.
+
+![Diagram of the Network](1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
+
+(1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
+
+---
+
+### Section 2: Description of the Topology
 
 <details>
   <summary>Expand to see full description of network requirements and resulting topology</summary>
@@ -46,7 +50,6 @@ Summary of key network components and configurations as follows:
 | Web-1               | Web-App Server            | Red-Team-Net    | 10.0.0.5   | Linux-Ubuntu     |
 | Web-2               | Web-App Server            | Red-Team-Net    | 10.0.0.6   | Linux-Ubuntu     |
 | ELK-Stack           | Log Analytics & Alerting  | Red-Team-Net2   | 10.1.0.4   | Linux-Ubuntu     |
-
 
  <details>
    <summary>Expand the section below to see key configurations of the virtual networks, load balancer, and jumpbox.</summary>
@@ -81,7 +84,7 @@ Network peering:
 
 ---
 
-### Section 2: Access Policies
+### Section 3: Access Policies
 
 <details>
   <summary>Expand to see full description of access policies</summary>
@@ -114,7 +117,7 @@ Access Rules - ELK Stack
 
 ---
 
-### Section 3: ELK Stack Configuration
+### Section 4: ELK Stack Configuration
 
 <details>
   <summary>Expand to see full description of ELK Stack configuration</summary>
@@ -186,7 +189,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ---
 
-### Section 4: Using Ansible Build and Playbooks
+### Section 5: Using Ansible Build and Playbooks
 
 <details>
   <summary>Expand to see full description of using Ansible build and playbooks</summary>
@@ -207,19 +210,3 @@ _TODO: Answer the following questions to fill in the blanks:_
 
 ---
 
-### Section 5: FAQ
-
-<details>
-  <summary>Expand to see the full FAQ - This section may be revised over time as new tips and techniques are discovered</summary>
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
-
-![](https://img.shields.io/badge/Tools-Docker-informational?style=flat&logo=docker&logoColor=white&color=2bbc8a)
-
-
-
-</details>
-
----
