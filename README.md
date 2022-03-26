@@ -1,5 +1,7 @@
 # CyberSecurity_Co-Op
-Hello github community! <iframe src="https://giphy.com/embed/EVeROhL7ATI0clsD87" width="480" height="456" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/hi-how-are-you-afre-doing-EVeROhL7ATI0clsD87">via GIPHY</a></p>
+Hello github community! <iframe src="https://giphy.com/embed/EVeROhL7ATI0clsD87" width="480" height="456" frameBorder="0" class="giphy-embed" 
+
+via GIPHY</a></p>
 
 
 My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
