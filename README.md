@@ -1,5 +1,5 @@
 # CyberSecurity_Co-Op
-Hello github community! <iframe src="https://giphy.com/embed/EVeROhL7ATI0clsD87" width="480" height="456" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/hi-how-are-you-afre-doing-EVeROhL7ATI0clsD87"/>
+Hello github community! <iframe src="https://giphy.com/embed/EVeROhL7ATI0clsD87" width="480" height="456" frameBorder="0" class="giphy-embed"/>
 
 via GIPHY</a></p>
  
