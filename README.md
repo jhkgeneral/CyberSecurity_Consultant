@@ -83,7 +83,7 @@ Private IP range of the virtual networks noted above defined as follows:
 Network peering:
 - Configured between the **Red-Team-Net** and **Red-Team-Net2** virtual networks, allowing connection in both directions from virtual machines existing in different regions.
 
-![Network Peering](1-Images/Network_Peering.png)
+![Network Peering](1-Images/Network-Peering.PNG)
 
  </details>
 
