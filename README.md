@@ -5,7 +5,7 @@ This repository depicts the archictecture and deployment tools leveraged to setu
 
 The following represents the complete MS Azure based virtual network created as part of this project:
 
-![Diagram of the Network](https://github.com/jhkgeneral/CyberSecurity_Consultant_Private/blob/main/1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
+![Diagram of the Network](https://github.com/jhkgeneral/CyberSecurity_Consultant_Private/1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
 (1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
