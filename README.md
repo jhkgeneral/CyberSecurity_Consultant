@@ -1,11 +1,11 @@
-# CyberSecurity_Co-Op
+# CyberSecurity_Training
 Hello github community! My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
 
-## Automated ELK Stack Deployment
+## Project 1 Overview: Automated ELK Stack Deployment
 
-The sections below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select sections may be viewed to view how to configure and run playbook files to install only certain components, such as `FILEBEAT` or `METRICBEAT`.
+The sections below may be used to either recreate the entire deployment on MS Azure.  The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
 
-The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
+Alternatively, select sections may be viewed to understand how to configure and run `Ansible` playbook files to install only certain components, such as `FILEBEAT` or `METRICBEAT`.
 
 This README file contains the following sections:
 
@@ -13,8 +13,6 @@ This README file contains the following sections:
 - **Section 2:** Description of the Topology
 - **Section 3:** Access Policies
 - **Section 4:** ELK Stack Configuration
-  - Beats in Use
-  - Machines Being Monitored
 - **Section 5:** Using Ansible Build & Playbooks
 
 ---
