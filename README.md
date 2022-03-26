@@ -199,7 +199,7 @@ Enter the Docker container on JumpboxProvisioner with the following command:
 - $ sudo docker exec -ti sweet_elbakyan /bin/bash
 
 Image of docker container:
-![docker-container](1-Images/docker-container.PNG)
+![docker-container](1-Images/docker-commandline.PNG)
 
 **Step 2 – Modify Ansible Host File:**
 The Ansible ‘etc/host’ file requires update to have visibility to the target machines.  Our etc/ansible/hosts file was updated to include a group of servers titled ‘webservers’ and another group of servers titled ‘elk’.  The private IP of the target servers was entered into each group as follows:
@@ -216,16 +216,16 @@ The following folder structure was created on the Ansible docker to accommodate 
 
 Playbooks created as follows:
 DVWA:
-[Web-Applications](2-Ansible/my-webapp.yaml)
+![Web-Applications](2-Ansible/my-webapp.yaml)
 
 ELK Stack:
-[ELK Stack Playbook:](2-Ansible/my-install-elk.yaml)
+![ELK Stack Playbook:](2-Ansible/my-install-elk.yaml)
 
 Filebeat:
-[Filebeat Playbook:](2-Ansible/filebeat-playbook.yaml)
+![Filebeat Playbook:](2-Ansible/filebeat-playbook.yaml)
 
 Metricbeat:
-[Metricbeat Playbook:](2-Ansible/metricbeat-playbook.yaml)
+![Metricbeat Playbook:](2-Ansible/metricbeat-playbook.yaml)
 
  </details>
 
@@ -234,13 +234,13 @@ Metricbeat:
 
 Configuration files created as follows:
 Ansible:
-[Ansible Configuration](2-Ansible/ansible.cfg)
+![Ansible Configuration](2-Ansible/ansible.cfg)
 
 Filebeat:
-[Filebeat Config](2-Ansible/filebeat-config.yml)
+![Filebeat Config](2-Ansible/filebeat-config.yml)
 
 Metricbeat:
-[Metricbeat Config](2-Ansible/metricbeat-config.yml)
+![Metricbeat Config](2-Ansible/metricbeat-config.yml)
 
  </details>
 
@@ -267,23 +267,23 @@ Check Docker status from command line:
 
 **Docker Views:**
 Web-1 DVWA:
-[Web-1 DVWA Docker](1-Images/web1-dvwa.PNG)
+![Web-1 DVWA Docker](1-Images/web1-dvwa.PNG)
 
 Web-2 DVWA:
-[Web-2 DVWA Docker](1-Images/web2-dvwa.PNG)
+![Web-2 DVWA Docker](1-Images/web2-dvwa.PNG)
 
 ELK-Stack:
-[ELK-Stack Docker](1-Images/elk-docker.PNG)
+![ELK-Stack Docker](1-Images/elk-docker.PNG)
 
 **Web portal views:**
 
 DVWA:
 - Enter the public IP assigned by Azure
-[DVWA Portal](1-Images/dvwa-web-portal.PNG)
+![DVWA Portal](1-Images/dvwa-web-portal.PNG)
 
 ELK-Stack:
 - Enter the public IP assigned by Azue
-[ELK-Stack Kibana View](1-Images/elk-stack-kibanaportal.PNG)
+![ELK-Stack Kibana View](1-Images/elk-stack-kibanaportal.PNG)
 
  </details>
 
