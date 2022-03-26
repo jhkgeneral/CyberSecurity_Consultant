@@ -54,20 +54,20 @@ Summary of key network components and configurations as follows:
 Summary of load balancer:
 - _Frontend IP Configuration:_ Public IP address defined as `20.25.77.115`
 
-![Frontend IP Config Image](https://github.com/jhkgeneral/CyberSecurity_Consultant_Private/blob/main/1-Images/Frontend-IP-Config.PNG)
+![Frontend IP Config Image](1-Images/Frontend-IP-Config.PNG)
 
 - _Backend Pools:_ Backend pools that include servers `Web-1` and `Web-2` defined
 
-![Backend Pools Config Image](https://github.com/jhkgeneral/CyberSecurity_Consultant_Private/blob/main/1-Images/Backend-Pools.PNG)
+![Backend Pools Config Image](1-Images/Backend-Pools.PNG)
 
 - _Health Probes:_ Azure Load Balancer rules require a health probe to detect the endpoint status. The configuration of the health probe and probe responses determines which backend pool instances will receive new connections. The health probe in the Red-Team load balancer helps detect the failure of the DVWA application on either `Web-1` or `Web-2` and direct traffic to the active application.
 
-![Health Probe Config Image](https://github.com/jhkgeneral/CyberSecurity_Consultant_Private/blob/main/1-Images/Red-Team-Probe.PNG)
+![Health Probe Config Image](1-Images/Red-Team-Probe.PNG)
 
 Summary of Jumpbox:
 - _Properties of Jumpbox Virtual Machine:_ The Jumpbox virtual provides the benefit of prohibiting external users from directly accessing the `Web-1` and `Web-2` servers, rather the Jumpbox defines what traffic (SSH, HTTP, or other) is allowed through to the servers.
 
-![Jumpbox VM Config Image](https://github.com/jhkgeneral/CyberSecurity_Consultant_Private/blob/main/1-Images/Jumpbox%20VM%20Config.PNG)
+![Jumpbox VM Config Image](1-Images/Jumpbox%20VM%20Config.PNG)
 
 Private IP range of the virtual networks noted above defined as follows:
 - **Red-Team-Net:** 10.0.0.0/16
@@ -102,11 +102,11 @@ Machines within the network can only be accessed by the Jumpbox virtual machine.
 
 Access Rules - Jumpbox
 
-![JumpboxProvisioner Networking Rules](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Images/Access%20Rules%20Jumpbox.PNG)
+![JumpboxProvisioner Networking Rules](1-Images/Access%20Rules%20Jumpbox.PNG)
 
 Access Rules - ELK Stack
 
-![ELK Stack Networking Rules](https://github.com/jhkgeneral/CyberSecurity_Consultant/blob/main/1-Images/Access%20Rules%20ELK-Stack.PNG)
+![ELK Stack Networking Rules](1-Images/Access%20Rules%20ELK-Stack.PNG)
 
  </details>
 
