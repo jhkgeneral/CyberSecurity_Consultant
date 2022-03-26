@@ -1,16 +1,14 @@
 # CyberSecurity_Training
 Hello github community! My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
 
-## Project 1 Overview: Automated ELK Stack Deployment
+## Project 1 Overview
 
-The sections below may be used to either recreate the entire deployment on MS Azure.  The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
-
-Alternatively, select sections may be viewed to understand how to configure and run [Ansible](https://hub.docker.com/r/ansible/ansible/#!?msclkid=5a5f7a68ad3b11ecb803ff2a466d2e90) playbook files to install only certain components, such as [FILEBEAT](https://www.elastic.co/beats/filebeat?msclkid=e63a6160ad3b11ecae6645121e972632) or [METRICBEAT](https://www.elastic.co/beats/metricbeat?msclkid=f5e47f1cad3b11ec892bbb985a94eddb).
+Project 1 includes the creation of a virtual network with MS Azure.  The virtual network contain virtual machines that hosted web applications and a monitoring solution.  The sections below may be used to either recreate this network, web applications, and monitoring solution.  
 
 This README file contains the following sections:
 
 - **Section 1:** Network Diagram
-- **Section 2:** Description of the Topology
+- **Section 2:** Description of the Topology, Applications, and Monitoring Tool
 - **Section 3:** Access Policies
 - **Section 4:** ELK Stack Configuration
 - **Section 5:** Using Ansible Build & Playbooks
@@ -27,14 +25,18 @@ The following represents example MS Azure based virtual network created as part 
 
 ---
 
-### Section 2: Description of the Topology
+### Section 2: Description of the Topology, Applications, and Monitoring Tool
 
 <details>
   <summary>Expand to see full description of network requirements and resulting topology</summary>
 
-The main requirement of this network is to establish a load-balanced and monitored instances of DVWA, the [D*mn Vulnerable Web Application](https://opensourcelibs.com/lib/dvwa?msclkid=4d0d154aab7811ec90879e379f49b7cb).
+The main requirement of this network is to establish a load-balanced and monitored instances of DVWA, the [D*mn Vulnerable Web Application](https://opensourcelibs.com/lib/dvwa?msclkid=4d0d154aab7811ec90879e379f49b7cb).  The second requirement was to setup an application to monitor the DVWA web applications and servers. The [ELK Stack](https://www.elastic.co/) was chosen to perform the monitoring function. Further, modules were added to the ELK Stack solution to perform select monitoring functions.  The modules included: 
+- [FILEBEAT](https://www.elastic.co/beats/filebeat?msclkid=e63a6160ad3b11ecae6645121e972632)
+- [METRICBEAT](https://www.elastic.co/beats/metricbeat?msclkid=f5e47f1cad3b11ec892bbb985a94eddb).
 
-A simple network was designed to address this requirement.  The simple network includes a two virtual networks, jumpbox, load balancer, and three virtual machines.  The jumpbox, load balancer, and 2 of 3 virtual machines were defined in the virtual network name 'Red-Team--Net' as noted in the table below.  The virtual machines in 'Red-Team-Net' were defined as the web application servers hosting the DVWA application.  The virtual machines hosting DVWA were defined in a _Availability Pool_.  The use of _Availability Pool_ in MS Azure helps to ensure that access to the DVWA's is uniterupted in the event that 1 of the 2 virtual machines were to become unavailable.
+Additionally, the Docker [Ansible](https://hub.docker.com/r/ansible/ansible/#!?msclkid=5a5f7a68ad3b11ecb803ff2a466d2e90) was used to deploy the applications and associated configuration.  Ansible leverages playbook files to install and configure the application dockers on the target machines. 
+
+A simple network was designed to address the requirements.  A [Microsoft Azure](https://azure.microsoft.com/en-us) network was created to include a two virtual networks, jumpbox, load balancer, and three virtual machines.  The jumpbox, load balancer, and 2 of 3 virtual machines were defined in the virtual network name 'Red-Team--Net' as noted in the table below.  The virtual machines in 'Red-Team-Net' were defined as the web application servers hosting the DVWA application.  The virtual machines hosting DVWA were defined in a _Availability Pool_.  The use of _Availability Pool_ in MS Azure helps to ensure that access to the DVWA's is uniterupted in the event that 1 of the 2 virtual machines were to become unavailable.
 
 The 3rd virtual machine was the designated 'ELK Stack' server. This machine was defined in the virtual network named 'Red-Team-Net2', the macine was also placed in a seperate region of the MS Azure network.  This server host the ELK Stack monitoring application.  The purpose and configuration of the ELK Stack server is described at `Section 3` below.
 
