@@ -1,9 +1,11 @@
 # CyberSecurity_Training
-Hello github community! My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
+Hello github community! My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
+
+This repository depicts the summary of cloud application deployment project.
 
 ## Project 1 Overview
 
-Project 1 requirements includes the creation of a virtual network with MS Azure that host load balanced and monitored web application.  The sections below may be used to either recreate this network, web applications, and monitoring solution.  
+Project 1 requirements included the creation of a virtual network with MS Azure that host load balanced and monitored web application.  The sections below may be used to either recreate this network, web applications, and monitoring solution.  
 
 This README file contains the following sections:
 
