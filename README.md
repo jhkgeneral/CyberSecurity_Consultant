@@ -180,37 +180,110 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 ### Section 5: Using Ansible Build and Playbooks
 
+The JumpboxProvisioner virtual machine was setup with Docker.  Further the Ansible Docker container was installed on the JumpboxProvisioner virtual machine.  The instructions below assume these steps have been performed and the Ansible control node exist.
+
 <details>
-  <summary>Expand to see full description of using Ansible build and playbooks</summary>
+  <summary>Click here to view the steps defined</summary>
 
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+**Step 1 - Access JumpboxProvision Ansible Node:**
+To begin the installation of the DVWA docker and ELK Stack containers on the target machines, we will ‘SSH’ from local host into the JumpboxProvisioner using the following command:
+- $ ssh -I ~/ssh/id_rsa _userID_@DNS-address.azure.com
 
-SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+After successfully accessing the JumpboxProvision machine, start the previously installed Docker container:
+- $ sudo docker start _docker-name_
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+Image of installed docker on JumpboxProvisioner:
+![Jumpbox-Docker.PNG](1-Images/jumpbox-docker.PNG)
+
+Enter the Docker container on JumpboxProvisioner with the following command:
+- $ sudo docker exec -ti sweet_elbakyan /bin/bash
+
+Image of docker container:
+![docker-container](1-Images/docker-container.PNG)
+
+**Step 2 – Modify Ansible Host File:**
+The Ansible ‘etc/host’ file requires update to have visibility to the target machines.  Our etc/ansible/hosts file was updated to include a group of servers titled ‘webservers’ and another group of servers titled ‘elk’.  The private IP of the target servers was entered into each group as follows:
+![etc/ansible/hosts](1-Images/ansible-host.PNG)
+
+**Step 3 – Create & Ansible Playbooks for DVWA, ELK, Filebeat, and Metricbeat:**
+The following folder structure was created on the Ansible docker to accommodate the playbook and configuration files:
+- Etc/ansible/{hosts file}
+- Etc/ansible/roles/{playbook files}
+- Etc/ansible/roles/files{configuration files}
 
  <details>
-   <summary>Click here to view the details of playbooks and Docker status</summary>
+   <summary>Click here to view the playbook files created</summary>
 
-The following are representative steps of installing Ansible docker, defining Ansible hosts file, creating playbooks to install docker(s) and executing created playbooks:
-- **Step 1:** Install Docker and Ansible on the previously created `JumpboxProvisioner` virtual machine.
-- **Step 2:** Start and access the previously installed Docker container on `JumpboxProvisioner` virtual machine.
-  - _Start Docker:_ `sudo docker start {insert docker name}`
-  - _Enter Docker:_ `sudo docker exec -ti {insert docker name} /bin/bash`
-- **Step 3:** Navigate to folder containing Ansible hosts file and modify to identfiy recognized server groups.
-  - _Anisible Host Folder:_ Folder `etc/ansible` contains the hosts file.  Modify to include webserver and ELK Stack grouops, insert server IPs
-- **Step 4:** Define relevant playbooks to install ELK Docker against target 10.1.0.4, and install Filebeat and Metricbeat against targets 10.0.0.5 & 10.0.0.6.
-  - _Ansible Commands:_ `ansible-playbook {insert playbookname.yaml}
+Playbooks created as follows:
+DVWA:
+[Web-Applications](2-Ansible/my-webapp.yaml)
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+ELK Stack:
+[ELK Stack Playbook:](2-Ansible/my-install-elk.yaml)
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+Filebeat:
+[Filebeat Playbook:](2-Ansible/filebeat-playbook.yaml)
+
+Metricbeat:
+[Metricbeat Playbook:](2-Ansible/metricbeat-playbook.yaml)
+
+ </details>
+
+ <details>
+   <summary>Click here to vieew the configuration files created</summary>
+
+Configuration files created as follows:
+Ansible:
+[Ansible Configuration](2-Ansible/ansible.cfg)
+
+Filebeat:
+[Filebeat Config](2-Ansible/filebeat-config.yml)
+
+Metricbeat:
+[Metricbeat Config](2-Ansible/metricbeat-config.yml)
+
+ </details>
+
+**Step 4 – Run Playbooks:**
+The following command is used to run playbooks:
+- $ ansible-playbook {playbook-name}
+
+Note this command must be run from the folder containing the playbook files.
+
+Run results outputed to the terminal screen.
+
+**Step 5: Confirm Installation:**
+
+Navigate to the individual virtual machines (Web-1, Web-2, and ELK-Stack) and check docker status as follows:
+
+Navigate to individual machines:
+- $ ssh -i .ssh/id_rsa _userID@10.0.0.#
+
+Check Docker status from command line:
+- $ sudo docker ps
+
+ <details>
+   <summary>Click here to see status of DVWA and ELK-Stack Dockers</summary>
+
+**Docker Views:**
+Web-1 DVWA:
+[Web-1 DVWA Docker](1-Images/web1-dvwa.PNG)
+
+Web-2 DVWA:
+[Web-2 DVWA Docker](1-Images/web2-dvwa.PNG)
+
+ELK-Stack:
+[ELK-Stack Docker](1-Images/elk-docker.PNG)
+
+**Web portal views:**
+
+DVWA:
+- Enter the public IP assigned by Azure
+[DVWA Portal](1-Images/dvwa-web-portal.PNG)
+
+ELK-Stack:
+- Enter the public IP assigned by Azue
+[ELK-Stack Kibana View](1-Images/elk-stack-kibanaportal.PNG)
 
  </details>
 
