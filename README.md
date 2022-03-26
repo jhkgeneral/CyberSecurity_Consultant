@@ -1,5 +1,7 @@
-# CyberSecurity_Consultant
-This repository depicts the archictecture and deployment tools leveraged to setup MS Azure based virtual network, virtual machines, web applications, and ELK-Stack monitoring function.
+# CyberSecurity_Co-Op
+Hello github community!  <img src="1-image/wave.gif" width="30px">
+
+My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [![LinkedIn](https://www.linkedin.com/in/jimkrueger1/).
 
 ## Automated ELK Stack Deployment
 
@@ -215,6 +217,9 @@ _TODO: Answer the following questions to fill in the blanks:_
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
+![](https://img.shields.io/badge/Tools-Docker-informational?style=flat&logo=docker&logoColor=white&color=2bbc8a)
+
 
 
 </details>
