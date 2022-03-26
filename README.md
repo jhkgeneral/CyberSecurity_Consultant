@@ -1,27 +1,19 @@
 # CyberSecurity_Co-Op
-Hello github community! <iframe src="https://giphy.com/embed/EVeROhL7ATI0clsD87"/>
-
-via GIPHY</a></p>
- 
-
-via GIPHY</a></p>
-
-
-My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
+Hello github community! My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  This repository depicts the archictecture and deployment tools leveraged to setup a MS Azure based virtual network.  The network includes virtual machines, web applications, and ELK-Stack monitoring function. You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
 
 ## Automated ELK Stack Deployment
 
-The following represents the complete MS Azure based virtual network created as part of this project:
+The following represents example MS Azure based virtual network created as part of my training.
 
 ![Diagram of the Network](1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
 (1-Images/VirtualNetworkArchitecture_Mar2022.drawio.png)
 
-The summary below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select portions of the configuration and playbook files may be used to install only certain components, such as `FILEBEAT` or `METRICBEAT`.
+The sections below may be used to either recreate the entire deployment on MS Azure.  Alternatively, select sections may be viewed to view how to configure and run playbook files to install only certain components, such as `FILEBEAT` or `METRICBEAT`.
 
 The files referenced have been tested and used to generate a live [ELK Stack](https://www.elastic.co/) deployment on MS Azure. 
 
-This document contains the following sections:
+This README file contains the following sections:
 
 - **Section 1:** Description of the Topology
 - **Section 2:** Access Policies
