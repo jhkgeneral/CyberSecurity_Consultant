@@ -321,12 +321,12 @@ Check Docker status from command line:
 (1) Filebeat:
 - See image below for evidence of the active Filebeat agent on Web-1 and Web-2:
 
-![ ](1-Images/Kibana%Activity%-%Filebeat%032722.PNG)
+![ ](1-Images/KibanaFilebeat032722.PNG)
 
 (2) Metricbeat:
 - See image below for evidence of the active Metricbeat agent on Web-1 and Web-2:
 
-![ ](1-Images/Kibana%Activity%-%Metricbeat%032722.PNG)
+![ ](1-Images/KibanaMetricbeat032722.PNG)
 
 </details>
 
