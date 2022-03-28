@@ -223,21 +223,13 @@ The following folder structure was created on the Ansible docker to accommodate 
 
 Playbooks created as follows:
 
-(1) DVWA:
+![(1) DVWA Playbook - link to text file](2-Ansible/my-webapp.yaml.txt)
 
-![Web-Applications](2-Ansible/my-webapp.yaml.txt)
+![(2) ELK Stack Playbook - link to text file](2-Ansible/my-install-elk.yaml.txt)
 
-(2) ELK Stack:
+![(3) Filebeat Playbook - link to text file](2-Ansible/filebeat-playbook.yaml.txt)
 
-![ ](2-Ansible/my-install-elk.yaml.txt)
-
-(3) Filebeat:
-
-![ ](2-Ansible/filebeat-playbook.yaml.txt)
-
-(4) Metricbeat:
-
-![ ](2-Ansible/metricbeat-playbook.yaml.txt)
+![(4) Metricbeat Playbook - link to text file](2-Ansible/metricbeat-playbook.yaml.txt)
 
  </details>
 
@@ -245,17 +237,12 @@ Playbooks created as follows:
    <summary>Click here to vieew the configuration files created</summary>
 
 Configuration files created as follows:
-(1) Ansible:
 
-![ ](2-Ansible/ansible.cfg.txt)
+![(1) Ansible Configuration - link to text file](2-Ansible/ansible.cfg.txt)
 
-(2) Filebeat:
+![(2) Filebeat Configuration - link to text file](2-Ansible/filebeat-config.yml.txt)
 
-![ ](2-Ansible/filebeat-config.yml.txt)
-
-(3) Metricbeat:
-
-![ ](2-Ansible/metricbeat-config.yml.txt)
+![(3) Metricbeat Configuration - link to text file](2-Ansible/metricbeat-config.yml.txt)
 
  </details>
 
