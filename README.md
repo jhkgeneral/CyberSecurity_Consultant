@@ -165,11 +165,18 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
     - Logs collected and parsed in the project configuration include for example:
       - **nginx**: Records events like visitors to your site and issues it encountered to log files. 
       - **osquery**: Records events like user logins, installed programs, running processes, network connections, or system log collection. 
+    - See image below for evidence of the active Filebeat agent on Web-1 and Web-2:
+
+![Filebeat Evidence](1-Images/Kibana Activity - Filebeat 032722.PNG)
+
   - `METRICBEAT`: _Collects machine metrics_
     - This beat collects and parses data/statistics from various system/hardware components of the machines or containers where installed and configured.
     - The beat outputs data the _elasticsearch_ and _Kibana_ modules of ELK Stack.
     - Example statistics collected and parsed include for example:
       - CPU usage, memory, file system, disk IO, and network IO statistics, as well as processes running on your systems.
+    - See image below for evidence of the active Metricbeat agent on Web-1 and Web-2:
+
+![Metricbeat Evidence](1-Images/Kibana Activity - Metricbeat 032722.PNG)
 
  </details>
 
@@ -193,17 +200,17 @@ After successfully accessing the JumpboxProvision machine, start the previously 
 - $ sudo docker start _docker-name_
 
 Image of installed docker on JumpboxProvisioner:
-![Jumpbox-Docker.PNG](1-Images/jumpbox-docker.PNG)
+![Jumpbox Docker](1-Images/jumpbox-docker.png)
 
 Enter the Docker container on JumpboxProvisioner with the following command:
 - $ sudo docker exec -ti sweet_elbakyan /bin/bash
 
 Image of docker container:
-![docker-container](1-Images/docker-commandline.PNG)
+![Docker Container](1-Images/docker-commandline.png)
 
 **Step 2 – Modify Ansible Host File:**
 The Ansible ‘etc/host’ file requires update to have visibility to the target machines.  Our etc/ansible/hosts file was updated to include a group of servers titled ‘webservers’ and another group of servers titled ‘elk’.  The private IP of the target servers was entered into each group as follows:
-![etc/ansible/hosts](1-Images/ansible-host.PNG)
+![etc/ansible/hosts](1-Images/ansible-hosts.png)
 
 **Step 3 – Create & Ansible Playbooks for DVWA, ELK, Filebeat, and Metricbeat:**
 The following folder structure was created on the Ansible docker to accommodate the playbook and configuration files:
@@ -216,16 +223,16 @@ The following folder structure was created on the Ansible docker to accommodate 
 
 Playbooks created as follows:
 DVWA:
-![Web-Applications](2-Ansible/my-webapp.yaml)
+![Web-Applications](2-Ansible/my-webapp.yaml.txt)
 
 ELK Stack:
-![ELK Stack Playbook:](2-Ansible/my-install-elk.yaml)
+![ELK Stack Playbook:](2-Ansible/my-install-elk.yaml.txt)
 
 Filebeat:
-![Filebeat Playbook:](2-Ansible/filebeat-playbook.yaml)
+![Filebeat Playbook:](2-Ansible/filebeat-playbook.yaml.txt)
 
 Metricbeat:
-![Metricbeat Playbook:](2-Ansible/metricbeat-playbook.yaml)
+![Metricbeat Playbook:](2-Ansible/metricbeat-playbook.yaml.txt)
 
  </details>
 
@@ -234,13 +241,13 @@ Metricbeat:
 
 Configuration files created as follows:
 Ansible:
-![Ansible Configuration](2-Ansible/ansible.cfg)
+![Ansible Configuration](2-Ansible/ansible.cfg.txt)
 
 Filebeat:
-![Filebeat Config](2-Ansible/filebeat-config.yml)
+![Filebeat Config](2-Ansible/filebeat-config.yml.txt)
 
 Metricbeat:
-![Metricbeat Config](2-Ansible/metricbeat-config.yml)
+![Metricbeat Config](2-Ansible/metricbeat-config.yml.txt)
 
  </details>
 
@@ -273,7 +280,7 @@ Web-2 DVWA:
 ![Web-2 DVWA Docker](1-Images/web2-dvwa.PNG)
 
 ELK-Stack:
-![ELK-Stack Docker](1-Images/elk-docker.PNG)
+![ELK-Stack Docker](1-Images/elk-docker.png)
 
 **Web portal views:**
 
