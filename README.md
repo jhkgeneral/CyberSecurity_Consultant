@@ -167,7 +167,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
       - **osquery**: Records events like user logins, installed programs, running processes, network connections, or system log collection. 
     - See image below for evidence of the active Filebeat agent on Web-1 and Web-2:
 
-![Filebeat Evidence](1-Images/Kibana Activity - Filebeat 032722.PNG)
+![ ](1-Images/Kibana%Activity%-%Filebeat%032722.PNG)
 
   - `METRICBEAT`: _Collects machine metrics_
     - This beat collects and parses data/statistics from various system/hardware components of the machines or containers where installed and configured.
@@ -176,7 +176,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
       - CPU usage, memory, file system, disk IO, and network IO statistics, as well as processes running on your systems.
     - See image below for evidence of the active Metricbeat agent on Web-1 and Web-2:
 
-![Metricbeat Evidence](1-Images/Kibana Activity - Metricbeat 032722.PNG)
+![ ](1-Images/Kibana%Activity%-%Metricbeat%032722.PNG)
 
  </details>
 
