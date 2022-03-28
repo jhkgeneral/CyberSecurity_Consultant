@@ -14,6 +14,7 @@ This README file contains the following sections:
 - **Section 3:** Access Policies
 - **Section 4:** ELK Stack Configuration
 - **Section 5:** Using Ansible Build & Playbooks
+- **Section 6:** Confirm Web-App Function
 
 ---
 
@@ -165,18 +166,14 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
     - Logs collected and parsed in the project configuration include for example:
       - **nginx**: Records events like visitors to your site and issues it encountered to log files. 
       - **osquery**: Records events like user logins, installed programs, running processes, network connections, or system log collection. 
-    - See image below for evidence of the active Filebeat agent on Web-1 and Web-2:
-
-![ ](1-Images/Kibana%Activity%-%Filebeat%032722.PNG)
 
   - `METRICBEAT`: _Collects machine metrics_
     - This beat collects and parses data/statistics from various system/hardware components of the machines or containers where installed and configured.
     - The beat outputs data the _elasticsearch_ and _Kibana_ modules of ELK Stack.
     - Example statistics collected and parsed include for example:
       - CPU usage, memory, file system, disk IO, and network IO statistics, as well as processes running on your systems.
-    - See image below for evidence of the active Metricbeat agent on Web-1 and Web-2:
 
-![ ](1-Images/Kibana%Activity%-%Metricbeat%032722.PNG)
+**Note:** See section 
 
  </details>
 
@@ -200,17 +197,20 @@ After successfully accessing the JumpboxProvision machine, start the previously 
 - $ sudo docker start _docker-name_
 
 Image of installed docker on JumpboxProvisioner:
-![Jumpbox Docker](1-Images/jumpbox-docker.png)
+
+![ ](1-Images/jumpbox-docker.png)
 
 Enter the Docker container on JumpboxProvisioner with the following command:
 - $ sudo docker exec -ti sweet_elbakyan /bin/bash
 
 Image of docker container:
-![Docker Container](1-Images/docker-commandline.png)
+
+![ ](1-Images/docker-commandline.png)
 
 **Step 2 – Modify Ansible Host File:**
 The Ansible ‘etc/host’ file requires update to have visibility to the target machines.  Our etc/ansible/hosts file was updated to include a group of servers titled ‘webservers’ and another group of servers titled ‘elk’.  The private IP of the target servers was entered into each group as follows:
-![etc/ansible/hosts](1-Images/ansible-hosts.png)
+
+![ ](1-Images/ansible-hosts.png)
 
 **Step 3 – Create & Ansible Playbooks for DVWA, ELK, Filebeat, and Metricbeat:**
 The following folder structure was created on the Ansible docker to accommodate the playbook and configuration files:
@@ -222,17 +222,22 @@ The following folder structure was created on the Ansible docker to accommodate 
    <summary>Click here to view the playbook files created</summary>
 
 Playbooks created as follows:
-DVWA:
+
+(1) DVWA:
+
 ![Web-Applications](2-Ansible/my-webapp.yaml.txt)
 
-ELK Stack:
-![ELK Stack Playbook:](2-Ansible/my-install-elk.yaml.txt)
+(2) ELK Stack:
 
-Filebeat:
-![Filebeat Playbook:](2-Ansible/filebeat-playbook.yaml.txt)
+![ ](2-Ansible/my-install-elk.yaml.txt)
 
-Metricbeat:
-![Metricbeat Playbook:](2-Ansible/metricbeat-playbook.yaml.txt)
+(3) Filebeat:
+
+![ ](2-Ansible/filebeat-playbook.yaml.txt)
+
+(4) Metricbeat:
+
+![ ](2-Ansible/metricbeat-playbook.yaml.txt)
 
  </details>
 
@@ -240,14 +245,17 @@ Metricbeat:
    <summary>Click here to vieew the configuration files created</summary>
 
 Configuration files created as follows:
-Ansible:
-![Ansible Configuration](2-Ansible/ansible.pdf)
+(1) Ansible:
 
-Filebeat:
-![Filebeat Config](2-Ansible/filebeat-config.yml.txt)
+![ ](2-Ansible/ansible.cfg.txt)
 
-Metricbeat:
-![Metricbeat Config](2-Ansible/metricbeat-config.yml.txt)
+(2) Filebeat:
+
+![ ](2-Ansible/filebeat-config.yml.txt)
+
+(3) Metricbeat:
+
+![ ](2-Ansible/metricbeat-config.yml.txt)
 
  </details>
 
@@ -264,7 +272,7 @@ Run results outputed to the terminal screen.
 Navigate to the individual virtual machines (Web-1, Web-2, and ELK-Stack) and check docker status as follows:
 
 Navigate to individual machines:
-- $ ssh -i .ssh/id_rsa _userID@10.0.0.#
+- $ ssh -i .ssh/id_rsa userID@10.0.0.#
 
 Check Docker status from command line:
 - $ sudo docker ps
@@ -273,26 +281,52 @@ Check Docker status from command line:
    <summary>Click here to see status of DVWA and ELK-Stack Dockers</summary>
 
 **Docker Views:**
-Web-1 DVWA:
-![Web-1 DVWA Docker](1-Images/web1-dvwa.PNG)
+(1) Web-1 DVWA:
 
-Web-2 DVWA:
-![Web-2 DVWA Docker](1-Images/web2-dvwa.PNG)
+![ ](1-Images/web1-dvwa.PNG)
 
-ELK-Stack:
-![ELK-Stack Docker](1-Images/elk-docker.png)
+(2) Web-2 DVWA:
 
-**Web portal views:**
+![ ](1-Images/web2-dvwa.PNG)
 
-DVWA:
-- Enter the public IP assigned by Azure
-![DVWA Portal](1-Images/dvwa-web-portal.PNG)
+(3) ELK-Stack:
 
-ELK-Stack:
-- Enter the public IP assigned by Azue
-![ELK-Stack Kibana View](1-Images/elk-stack-kibanaportal.PNG)
+![ ](1-Images/elk-docker.png)
 
  </details>
+
+</details>
+
+---
+
+### Section 6: Confirm Web-App Function
+
+<details>
+  <summary>Click here to see evidence of Web-App function</summary>
+
+**Web App Portal Views:**
+
+(1) DVWA:
+- Enter the public IP assigned by Azure
+
+![ ](1-Images/dvwa-web-portal.PNG)
+
+(2) ELK-Stack:
+- Enter the public IP assigned by Azue
+
+![ ](1-Images/elk-stack-kibanaportal.PNG)
+
+**Kibana Logging Evidence:**
+
+(1) Filebeat:
+- See image below for evidence of the active Filebeat agent on Web-1 and Web-2:
+
+![ ](1-Images/Kibana%Activity%-%Filebeat%032722.PNG)
+
+(2) Metricbeat:
+- See image below for evidence of the active Metricbeat agent on Web-1 and Web-2:
+
+![ ](1-Images/Kibana%Activity%-%Metricbeat%032722.PNG)
 
 </details>
 
