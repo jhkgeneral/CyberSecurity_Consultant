@@ -112,11 +112,11 @@ Machines within the network can only be accessed by the Jumpbox virtual machine.
 
 Access Rules - Jumpbox
 
-![JumpboxProvisioner Networking Rules](1-Images/Access%20Rules%20Jumpbox.PNG)
+![ ](1-Images/Access%20Rules%20Jumpbox.PNG)
 
 Access Rules - ELK Stack
 
-![ELK Stack Networking Rules](1-Images/Access%20Rules%20ELK-Stack.PNG)
+![ ](1-Images/Access%20Rules%20ELK-Stack.PNG)
 
  </details>
 
@@ -241,7 +241,7 @@ Metricbeat:
 
 Configuration files created as follows:
 Ansible:
-![Ansible Configuration](2-Ansible/ansible.cfg.txt)
+![Ansible Configuration](2-Ansible/ansible.pdf)
 
 Filebeat:
 ![Filebeat Config](2-Ansible/filebeat-config.yml.txt)
