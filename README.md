@@ -33,13 +33,13 @@ The following represents example MS Azure based virtual network created as part 
 <details>
   <summary>Expand to see full description of network requirements and resulting topology</summary>
 
-As noted in the overview, project requirements include establishing a load-balanced and monitored web applications.  The web application selected was DVWA, the [D*mn Vulnerable Web Application](https://opensourcelibs.com/lib/dvwa?msclkid=4d0d154aab7811ec90879e379f49b7cb).  The monitoring solution selected was [ELK Stack](https://www.elastic.co/).  Further, additional modules were added to the ELK Stack solution to perform select monitoring functions.  The modules included: 
-- [FILEBEAT](https://www.elastic.co/beats/filebeat?msclkid=e63a6160ad3b11ecae6645121e972632)
-- [METRICBEAT](https://www.elastic.co/beats/metricbeat?msclkid=f5e47f1cad3b11ec892bbb985a94eddb).
+As noted in the overview, project requirements include establishing a load-balanced and monitored web applications.  The web application selected was DVWA, the [D*mn Vulnerable Web Application](https://opensourcelibs.com/lib/dvwa?msclkid=4d0d154aab7811ec90879e379f49b7cb).  The monitoring solution selected was [ELK Stack - url](https://www.elastic.co/).  Further, additional modules were added to the ELK Stack solution to perform select monitoring functions.  The modules included: 
+- [FILEBEAT - url](https://www.elastic.co/beats/filebeat?msclkid=e63a6160ad3b11ecae6645121e972632)
+- [METRICBEAT - url](https://www.elastic.co/beats/metricbeat?msclkid=f5e47f1cad3b11ec892bbb985a94eddb).
 
-Docker [Ansible](https://hub.docker.com/r/ansible/ansible/#!?msclkid=5a5f7a68ad3b11ecb803ff2a466d2e90) was used to deploy the applications and associated configuration files.  Ansible playbook files were created to install and configure the application dockers on the target machines. 
+Docker [Ansible - url](https://hub.docker.com/r/ansible/ansible/#!?msclkid=5a5f7a68ad3b11ecb803ff2a466d2e90) was used to deploy the applications and associated configuration files.  Ansible playbook files were created to install and configure the application dockers on the target machines. 
 
-A [Microsoft Azure](https://azure.microsoft.com/en-us) network was created to include a two virtual networks, jumpbox, load balancer, and three virtual machines.  This architecture was designed to host the web applications and monitoring solution.
+A [Microsoft Azure - url](https://azure.microsoft.com/en-us) network was created to include a two virtual networks, jumpbox, load balancer, and three virtual machines.  This architecture was designed to host the web applications and monitoring solution.
 
 The jumpbox, load balancer, and 2 of 3 virtual machines were defined in the virtual network name 'Red-Team--Net' as noted in the table below.  The virtual machines in 'Red-Team-Net' were defined as the web application servers hosting the DVWA application.  The virtual machines hosting DVWA were defined in a _Availability Pool_.  The use of _Availability Pool_ in MS Azure helps to ensure that access to the DVWA's is uniterupted in the event that 1 of the 2 virtual machines were to become unavailable.
 
@@ -130,7 +130,7 @@ Access Rules - ELK Stack
 <details>
   <summary>Expand to see full description of ELK Stack configuration</summary>
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually.  The advantages of Ansible include the following related to system configuration:
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually.  The advantages of Ansible include the following:
 - **Accuracy:** Leveraging Ansible to automate the setup of ELK machine helps ensure the accurate configuration of settings and flags, helping to eliminate human error.
 - **Completeness:** Leveraging Ansible to automate the setup of ELK machine helps ensure the complete setup of a single machine or many machines, helping to eliminate machines from being missed.
 
@@ -191,7 +191,7 @@ The JumpboxProvisioner virtual machine was setup with Docker.  Further the Ansib
 
 **Step 1 - Access JumpboxProvision Ansible Node:**
 To begin the installation of the DVWA docker and ELK Stack containers on the target machines, we will ‘SSH’ from local host into the JumpboxProvisioner using the following command:
-- $ ssh -I ~/ssh/id_rsa _userID_@DNS-address.azure.com
+- $ ssh -i ~/ssh/id_rsa _userID_@DNS-address.azure.com
 
 After successfully accessing the JumpboxProvision machine, start the previously installed Docker container:
 - $ sudo docker start _docker-name_
@@ -240,7 +240,7 @@ Configuration files created as follows:
 
 ![(1) Ansible Configuration - link to text file](2-Ansible/ansible.cfg.txt)
 
-![(2) Filebeat Configuration - link to text file](2-Ansible/filebeat-config.yml.txt)
+![(2) Filebeat Configuration - link to text file](2-Ansible/filbeat-config.yml.txt)
 
 ![(3) Metricbeat Configuration - link to text file](2-Ansible/metricbeat-config.yml.txt)
 
