@@ -3,9 +3,9 @@ Hello github community! My name is Jim Krueger and I am practicating Internal Au
 
 This repository depicts the summary of cloud application deployment project.
 
-## Project 1 Overview
+## Project Overview
 
-Project 1 requirements included the creation of a virtual network with MS Azure that host load balanced and monitored web application.  The sections below may be used to either recreate this network, web applications, and monitoring solution.  
+Project requirements included the creation of a virtual network with MS Azure that host load balanced and monitored web application.  The sections below may be used to either recreate this network, web applications, and monitoring solution.  
 
 This README file contains the following sections:
 
@@ -173,7 +173,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
     - Example statistics collected and parsed include for example:
       - CPU usage, memory, file system, disk IO, and network IO statistics, as well as processes running on your systems.
 
-**Note:** See section 
+**Note:** See _Section 6_ below for evidence of the beat agents logging activity.
 
  </details>
 
