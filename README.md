@@ -1,5 +1,4 @@
 # CyberSecurity_Training
-Hello github community! My name is Jim Krueger and I am practicating Internal Auditor specializing in IT Audit.  I hold CISA and CIA certifications.  I am presently studying in the field of cybersecurity.  You can find me on [LinkedIn](https://www.linkedin.com/in/jimkrueger1/)
 
 This repository depicts the summary of cloud application deployment project.
 
