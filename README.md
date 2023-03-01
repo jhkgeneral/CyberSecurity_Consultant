@@ -1,4 +1,4 @@
-# CyberSecurity_Training
+# Virtual Azure Network & Elk Stack Project
 
 This repository depicts the summary of cloud application deployment project.
 
